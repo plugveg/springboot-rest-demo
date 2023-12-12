@@ -9,7 +9,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>org.grostarin.springboot</groupId>
+	<groupId>org.setsuma.springboot</groupId>
 	<artifactId>springboot-rest-demo-parent</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
