@@ -128,10 +128,10 @@ public class SpringBootBootstrapLiveTest {
 
     @Test
     public void whenGetBannedBookssByTitle_thenOK() {
-        final BannedBooks book = createRandomBannedBooks();
-        createBannedBooksAsUri(book);
+        final BannedBooks bannedbook = createRandomBannedBooks();
+        createBannedBooksAsUri(bannedbook);
 
-        final Response response = RestAssured.get(getApiRoot() + "?title=" + book.getTitle());
+        final Response response = RestAssured.get(getApiRoot() + "?title=" + bannedbook.getTitle());
         assertEquals(HttpStatus.OK.value(), response.getStatusCode());
         assertTrue(response.as(List.class)
             .size() > 0);
@@ -139,12 +139,12 @@ public class SpringBootBootstrapLiveTest {
 
     @Test
     public void whenGetCreatedBannedBooksById_thenOK() {
-        final BannedBooks book = createRandomBannedBooks();
-        final String location = createBannedBooksAsUri(book);
+        final BannedBooks bannedbook = createRandomBannedBooks();
+        final String location = createBannedBooksAsUri(bannedbook);
 
         final Response response = RestAssured.get(location);
         assertEquals(HttpStatus.OK.value(), response.getStatusCode());
-        assertEquals(book.getTitle(), response.jsonPath()
+        assertEquals(bannedbook.getTitle(), response.jsonPath()
             .get("title"));
     }
 
@@ -157,37 +157,37 @@ public class SpringBootBootstrapLiveTest {
     // POST
     @Test
     public void whenCreateNewBannedBooks_thenCreated() {
-        final BannedBooks book = createRandomBannedBooks();
+        final BannedBooks bannedbook = createRandomBannedBooks();
 
         final Response response = RestAssured.given()
             .contentType(MediaType.APPLICATION_JSON_VALUE)
-            .body(book)
+            .body(bannedbook)
             .post(getApiRoot());
         assertEquals(HttpStatus.CREATED.value(), response.getStatusCode());
     }
 
     @Test
     public void whenInvalidBannedBooks_thenError() {
-        final BannedBooks book = createRandomBannedBooks();
-        book.setAuthor(null);
+        final BannedBooks bannedbook = createRandomBannedBooks();
+        bannedbook.setAuthor(null);
 
         final Response response = RestAssured.given()
             .contentType(MediaType.APPLICATION_JSON_VALUE)
-            .body(book)
+            .body(bannedbook)
             .post(getApiRoot());
         assertEquals(HttpStatus.BAD_REQUEST.value(), response.getStatusCode());
     }
 
     @Test
     public void whenUpdateCreatedBannedBooks_thenUpdated() {
-        final BannedBooks book = createRandomBannedBooks();
-        final String location = createBannedBooksAsUri(book);
+        final BannedBooks bannedbook = createRandomBannedBooks();
+        final String location = createBannedBooksAsUri(bannedbook);
 
-        book.setId(Long.parseLong(location.split("api/books/")[1]));
-        book.setAuthor("newAuthor");
+        bannedbook.setId(Long.parseLong(location.split("api/books/")[1]));
+        bannedbook.setAuthor("newAuthor");
         Response response = RestAssured.given()
             .contentType(MediaType.APPLICATION_JSON_VALUE)
-            .body(book)
+            .body(bannedbook)
             .put(location);
         assertEquals(HttpStatus.OK.value(), response.getStatusCode());
 
@@ -200,8 +200,8 @@ public class SpringBootBootstrapLiveTest {
 
     @Test
     public void whenDeleteCreatedBannedBooks_thenOk() {
-        final BannedBooks book = createRandomBannedBooks();
-        final String location = createBannedBooksAsUri(book);
+        final BannedBooks bannedbook = createRandomBannedBooks();
+        final String location = createBannedBooksAsUri(bannedbook);
 
         Response response = RestAssured.delete(location);
         assertEquals(HttpStatus.OK.value(), response.getStatusCode());
@@ -212,7 +212,7 @@ public class SpringBootBootstrapLiveTest {
 
     @Test
     public void whenTryToCreateBannedBooks_thenError() {
-        final BannedBooks bannedbooks = new BannedBooks("Livre_Interdit","auteur_Interdit");
+        final Book bannedbooks = new Book("Livre_Interdit","auteur_Interdit");
         final Book book = new Book("Livre_Interdit","auteur_Interdit");
         final Response response = RestAssured.given()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
