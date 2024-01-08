@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "DemoRestApplication",
+            "request": "launch",
+            "mainClass": "org.setsuma.springboot.demorest.DemoRestApplication",
+            "projectName": "springboot-rest-demo-ws",
+            "vmArgs": "-Dspring.profiles.active=dev -Dspring.config.location=springboot-rest-demo-config\\src\\main\\resources\\springboot-rest-demo.yml"
+        }
+    ]
+}
