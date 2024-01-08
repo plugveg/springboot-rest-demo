@@ -1,4 +1,13 @@
-# Springboot REST demo
+# Springboot REST demo - Thomas 'Setsuma' Siest - M1 CYBER
+
+# BE CAREFULL
+
+You may need to enable execution rights on .sh files via this command :
+```bash
+chmod +x [name_of_file].sh
+```
+
+---
 
 When running, swagger is available : http://localhost:8080/swagger-ui/index.html
 
