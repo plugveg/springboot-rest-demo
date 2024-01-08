@@ -28,6 +28,9 @@ public class SpringBootBootstrapLiveTest {
     private String getApiRoot() {
         return "http://localhost:"+port+"/api/books";
     }
+    private String getApiBannedBookRoot() {
+        return "http://localhost:"+port+"/api/bannedbooks";
+    }
 
     @Test
     public void whenGetAllBooks_thenOK() {
@@ -206,6 +209,24 @@ public class SpringBootBootstrapLiveTest {
         response = RestAssured.get(location);
         assertEquals(HttpStatus.NOT_FOUND.value(), response.getStatusCode());
     }
+
+    @Test
+    public void whenTryToCreateBannedBooks_thenError() {
+        final BannedBooks bannedbooks = new BannedBooks("Livre_Interdit","auteur_Interdit");
+        final Book book = new Book("Livre_Interdit","auteur_Interdit");
+        final Response response = RestAssured.given()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .body(bannedbooks)
+                .post(getApiBannedBookRoot());
+        assertEquals(HttpStatus.CREATED.value(), response.getStatusCode());
+
+        final Response response2 = RestAssured.given()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .body(book)
+                .post(getApiRoot());
+        assertEquals(HttpStatus.BAD_REQUEST.value(), response2.getStatusCode());
+    }
+
 
     // ===============================
 
