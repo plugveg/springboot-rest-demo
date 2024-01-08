@@ -1,11 +1,11 @@
-package org.grostarin.springboot.demorest.controllers;
+package org.setsuma.springboot.demorest.controllers;
 
 import javax.validation.Valid;
 
-import org.grostarin.springboot.demorest.annotations.LogExecutionTime;
-import org.grostarin.springboot.demorest.domain.Book;
-import org.grostarin.springboot.demorest.dto.BookSearch;
-import org.grostarin.springboot.demorest.services.BookServices;
+import org.setsuma.springboot.demorest.annotations.LogExecutionTime;
+import org.setsuma.springboot.demorest.domain.Book;
+import org.setsuma.springboot.demorest.dto.BookSearch;
+import org.setsuma.springboot.demorest.services.BookServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;

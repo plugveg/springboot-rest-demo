@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.grostarin.springboot</groupId>
+		<groupId>org.setsuma.springboot</groupId>
 		<artifactId>springboot-rest-demo-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>

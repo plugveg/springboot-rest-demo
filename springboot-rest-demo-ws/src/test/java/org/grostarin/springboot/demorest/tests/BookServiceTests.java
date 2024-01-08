@@ -1,9 +1,9 @@
-package org.grostarin.springboot.demorest.tests;
+package org.setsuma.springboot.demorest.tests;
 
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-import org.grostarin.springboot.demorest.domain.Book;
-import org.grostarin.springboot.demorest.services.BookServices;
+import org.setsuma.springboot.demorest.domain.Book;
+import org.setsuma.springboot.demorest.services.BookServices;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

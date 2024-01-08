@@ -17,7 +17,7 @@ VM Args have to be added
             "type": "java",
             "name": "DemoRestApplication",
             "request": "launch",
-            "mainClass": "org.grostarin.springboot.demorest.DemoRestApplication",
+            "mainClass": "org.setsuma.springboot.demorest.DemoRestApplication",
             "projectName": "springboot-rest-demo-ws",
             "vmArgs": "-Dspring.profiles.active=dev -Dspring.config.location=<PATH_TO_PROJECT>springboot-rest-demo-config\\src\\main\\resources\\springboot-rest-demo.yml"
         }

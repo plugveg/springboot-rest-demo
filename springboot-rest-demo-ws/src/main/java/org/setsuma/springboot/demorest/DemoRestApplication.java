@@ -1,4 +1,4 @@
-package org.grostarin.springboot.demorest;
+package org.setsuma.springboot.demorest;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -7,7 +7,7 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
-import org.grostarin.springboot.demorest.config.Constants;
+import org.setsuma.springboot.demorest.config.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +17,9 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(scanBasePackages = "org.grostarin.springboot.demorest")
-@EnableJpaRepositories("org.grostarin.springboot.demorest.repositories")
-@EntityScan("org.grostarin.springboot.demorest.domain")
+@SpringBootApplication(scanBasePackages = "org.setsuma.springboot.demorest")
+@EnableJpaRepositories("org.setsuma.springboot.demorest.repositories")
+@EntityScan("org.setsuma.springboot.demorest.domain")
 public class DemoRestApplication {
     
     private static final Logger LOG = LoggerFactory.getLogger(DemoRestApplication.class);

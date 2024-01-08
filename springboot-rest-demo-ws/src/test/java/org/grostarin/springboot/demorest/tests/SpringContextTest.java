@@ -1,4 +1,4 @@
-package org.grostarin.springboot.demorest.tests;
+package org.setsuma.springboot.demorest.tests;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

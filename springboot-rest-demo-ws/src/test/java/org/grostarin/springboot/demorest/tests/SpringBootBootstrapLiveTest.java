@@ -1,4 +1,4 @@
-package org.grostarin.springboot.demorest.tests;
+package org.setsuma.springboot.demorest.tests;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
-import org.grostarin.springboot.demorest.domain.Book;
+import org.setsuma.springboot.demorest.domain.Book;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;

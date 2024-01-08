@@ -1,4 +1,4 @@
-package org.grostarin.springboot.demorest.exceptions;
+package org.setsuma.springboot.demorest.exceptions;
 
 public class BookNotFoundException extends RuntimeException {
 
