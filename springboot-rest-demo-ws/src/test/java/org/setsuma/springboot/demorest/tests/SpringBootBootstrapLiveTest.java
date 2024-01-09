@@ -212,8 +212,8 @@ public class SpringBootBootstrapLiveTest {
 
     @Test
     public void whenTryToCreateBannedBooks_thenError() {
-        final Book bannedbooks = new Book("Livre_Interdit","auteur_Interdit");
-        final Book book = new Book("Livre_Interdit","auteur_Interdit");
+        final Book bannedbooks = new Book("Forbiden_Book","Forbiden_Author");
+        final Book book = new Book("Forbiden_Book","Forbiden_Author");
         final Response response = RestAssured.given()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(bannedbooks)
