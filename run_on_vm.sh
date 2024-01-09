@@ -2,7 +2,7 @@
 
 IMAGE_NAME="setsuma-devops-app"
 IMAGE_TAG="latest"
-REGISTRY_URL="setsuma/setsuma-devops-app"
+REGISTRY_URL="setsuma"
 
 docker pull $REGISTRY_URL/$IMAGE_NAME:$IMAGE_TAG
 
